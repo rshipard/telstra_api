@@ -33,8 +33,13 @@ My initial thoughts were:
 - mixed calls would mean using routes with different parameters
 - While I would like to use TDD, given the variables and time I'll need to focus on implementation first of basic calls, then add testing if time allows. If I don't get time I should make notes a a few sample tests to demonstrate the path desired.
 
-## Implementation
+## What I'd do differently with more time
+- Split the postcode table back off and integrate it with more planning to confim the data is valid via regex and testing
+- refactor a lot of the code with .map for searcing through the seperated table to confirm a match is found
+- rename for greater clarity and expansion use (E.g. use vehicle instead of car, unless that was specified, changing routes base on params)
+- split a lot of the repetitive code inso smaller self-contained controller fucntions that could be called.
 
+## Implementation
 I began by breaking down the design into:
 Backend = nodeJS
 DB = Postgres
@@ -51,5 +56,6 @@ If possible add jest unit testing later
 6) I changed the postcode to be a part of the cars database (the DB crossover was proving troublesome to implement as you needed to be able to have postcode that could also have different names)
 7) I tested repeatedly in Postman
 8) reminded myself again to post to github!
+9) updated the naming of the routes to allow for greater expansion and easy modification
 
 
