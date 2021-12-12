@@ -40,5 +40,16 @@ Backend = nodeJS
 DB = Postgres
 Framework = Express
 
-I then created the folders and made a Github for project management.
+Testing initially through Postman
+If possible add jest unit testing later
+
+1) I then created the folders and made a Github for project management.
+2) Made some test calls to a testing DB to confirm the connection
+3) populated the cars DB with some data
+4) confirmed the genereic post and get request were working via Postman
+5) reminded myself to post to github!
+6) I changed the postcode to be a part of the cars database (the DB crossover was proving troublesome to implement as you needed to be able to have postcode that could also have different names)
+7) I tested repeatedly in Postman
+8) reminded myself again to post to github!
+
 
