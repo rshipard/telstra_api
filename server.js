@@ -32,19 +32,6 @@ app.post('/vehicles/cars', async (req, res) => {
     }
 })
 
-// // Post a new car to DB
-// app.post('/cars', async (req, res) => {
-//     try {
-//         const { registration_number, year, color, manufacturer, model, postcode } = req.body
-//         // const checkForValidPostcode = postcodeCheck(postcode)
-//         const newCar = await pool.query("INSERT INTO cars (registration_number, year, color, manufacturer, model, postcode) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [registration_number.toUpperCase() , parseInt(year), color, manufacturer, model, parseInt(postcode)])
-//         res.json(newCar.rows)
-//     } catch (error) {
-//         console.log(error.message)
-//         res.send(error.message)
-//     }
-// })
-
 // Return all cars
 app.get('/vehicles/cars', async (req, res) => {
     try {
@@ -56,11 +43,11 @@ app.get('/vehicles/cars', async (req, res) => {
     }
 })
 
+// all cars within a postcode
 app.get('/vehicles/cars/:postcode', async (req, res) => {
     try {
         const carsForLocation = await pool.query("SELECT * FROM cars WHERE postcode = $1", [parseInt(req.params.postcode)])
         const totalCarsForLocation = carsForLocation.rowCount
-        console.log(totalCarsForLocation)
         res.json({'totalCars': totalCarsForLocation,cars:carsForLocation.rows})
     } catch (error) {
         console.log(error.message)

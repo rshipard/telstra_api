@@ -2,12 +2,6 @@ CREATE DATABASE telstra_vehicles;
 
 -- \c telstra_vehicles
 
--- only used for testing, left in for transparency
--- CREATE TABLE testing(
---     test_id SERIAL PRIMARY KEY,
---     description VARCHAR(255)
--- );
-
 -- This table assumes all cars are registered, and would need to be modified if that were not the case, or a seperate table established for unregistered cars (which could leading to cars ending up on both tables. Once again multiple checks need to be performed PRIOR to entering data into the DB)
 CREATE TABLE cars(
     car_id SERIAL PRIMARY KEY,
@@ -26,3 +20,9 @@ CREATE TABLE locations(
     postcode SMALLINT NOT NULL CHECK (postcode > 0),
     name TEXT NOT NULL
 );
+
+-- only used for testing, left in for transparency
+-- CREATE TABLE testing(
+--     test_id SERIAL PRIMARY KEY,
+--     description VARCHAR(255)
+-- );

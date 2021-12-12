@@ -35,9 +35,10 @@ My initial thoughts were:
 
 ## What I'd do differently with more time
 - Split the postcode table back off and integrate it with more planning to confim the data is valid via regex and testing
-- refactor a lot of the code with .map for searcing through the seperated table to confirm a match is found
+- refactor a lot of the code with .map and filter for searching through the seperated table to confirm a match is found
 - rename for greater clarity and expansion use (E.g. use vehicle instead of car, unless that was specified, changing routes base on params)
 - split a lot of the repetitive code inso smaller self-contained controller fucntions that could be called.
+- add seperate tables for other vehicles and confirm that they are all accessing the location table correctly, then make merged search queryies for a single location, total number of vehicles in a location, age range and stats in an area, stats by model etc.
 
 ## Implementation
 I began by breaking down the design into:
